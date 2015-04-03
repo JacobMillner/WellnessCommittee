@@ -4,3 +4,5 @@
  *= require united/loader
  *= require united/bootswatch
 */
+body { padding-top: 70px; } 
+
