@@ -44,3 +44,6 @@ gem 'twitter-bootswatch-rails', :github => 'scottvrosenthal/twitter-bootswatch-r
 gem 'twitter-bootswatch-rails-helpers'
 # gem required for less
 gem "therubyracer"
+
+#for user auth
+gem 'devise'
