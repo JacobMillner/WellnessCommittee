@@ -13,7 +13,8 @@
     <![endif]-->
 
     <%= stylesheet_link_tag "united", :media => "all" %>
-
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield(:page_stylesheet) if content_for?(:page_stylesheet) %>
 
   </head>
