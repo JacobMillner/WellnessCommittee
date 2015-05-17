@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :wusers
   get 'users/new'
 
   root 'welcome#index'
