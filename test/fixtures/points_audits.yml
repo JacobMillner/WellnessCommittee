@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  modDate: 2015-05-21 00:37:45
+  oldPoints: 
+  newPoints: 
+
+two:
+  modDate: 2015-05-21 00:37:45
+  oldPoints: 
+  newPoints: 

@@ -11,7 +11,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150517232346) do
+ActiveRecord::Schema.define(version: 20150521004003) do
+
+  create_table "events", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "startDate"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "player_rounds", force: true do |t|
+    t.integer  "playerScore"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "players", force: true do |t|
+    t.string   "name"
+    t.integer  "points"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "points_audits", force: true do |t|
+    t.datetime "modDate"
+    t.integer  "oldPoints"
+    t.integer  "newPoints"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rounds", force: true do |t|
+    t.string   "description"
+    t.integer  "maxScore"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "wusers", force: true do |t|
     t.string   "email",                  default: "", null: false
