@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :wusers
-  get 'users/new'
+  get 'users/new' => 'wusers#new'
 
   root 'welcome#index'
   get 'admin' => 'admin#admin'
