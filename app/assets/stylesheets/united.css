@@ -6,3 +6,12 @@
 */
 body { padding-top: 70px; } 
 
+/* navbar */ 
+.navbar-default {    
+  background-color: white;     
+  border-color: white; 
+}
+.navbar .container { 
+  height: 7em;
+} 
+
