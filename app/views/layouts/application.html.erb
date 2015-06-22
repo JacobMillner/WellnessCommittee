@@ -40,7 +40,8 @@
         <div class="navbar-brand">Wellness Portal</div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-			  <li class="active"><%= link_to 'News', root_path %></li>
+            <li class="active"><%= link_to 'News', root_path %></li>
+        <% if wuser_signed_in? %>
 			  <li><%= link_to 'Profile', profile_path %></li>
             <li><a href="#contact">About</a></li>
             <li class="dropdown">
@@ -55,11 +56,17 @@
                 <li><a href="#">Separated link</a></li>
                 <li><a href="#">One more separated link</a></li>
               </ul>
-            </li>
+              </li>
+            <% end %>
           </ul>
           <ul class="nav navbar-nav navbar-right">         
-            <li><a href="#">Login</a></li>       
-          </ul>
+          <% if wuser_signed_in? %>
+            <li> <%= link_to 'Log Out', destroy_wuser_session_path, :method => :delete %></li>
+          <% else %>
+            <li> <%= link_to 'Log In', new_wuser_session_path %></li>
+            <li> <%= link_to 'Sign Up', new_wuser_registration_path %></li>
+          <% end %>
+        </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
