@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150622171050) do
+ActiveRecord::Schema.define(version: 20150622183131) do
 
   create_table "Wusers", force: true do |t|
     t.string   "email",                  default: "",    null: false
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20150622171050) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "isAdmin",                default: false
-    t.boolean  "isPlayerConnected"
+    t.boolean  "isPlayerConnected",      default: false
   end
 
   add_index "Wusers", ["email"], name: "index_wusers_on_email", unique: true
