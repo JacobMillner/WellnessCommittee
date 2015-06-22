@@ -1,13 +1,12 @@
 class AdminController < ApplicationController
-  before_filter :authenticate_user!
-  before_filter :is_admin?
+  before_filter :isAdmin?
   
   def login
     render "admin/login"
   end
 
-  def is_admin?
-    if current_user.isAdmin?
+  def isAdmin?
+    if current_wuser.isAdmin?
       true
     else
       render :text => 'You must be an admin to do this. If you are recieving this as an error,
