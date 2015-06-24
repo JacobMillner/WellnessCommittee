@@ -74,7 +74,8 @@
             <% end %>
           </ul>
           <ul class="nav navbar-nav navbar-right">         
-          <% if wuser_signed_in? %>
+            <% if wuser_signed_in? %>
+              <div class="navbar-brand"><li>Hello,  <%= current_wuser.name %> </li></div>
             <li> <%= link_to 'Log Out', destroy_wuser_session_path, :method => :delete %></li>
           <% else %>
             <li> <%= link_to 'Log In', new_wuser_session_path %></li>

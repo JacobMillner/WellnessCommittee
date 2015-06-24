@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
   devise_for :wusers, :controllers => {:registrations => "wusers/registrations", 
                                        :sessions => "wusers/custom_sessions"}
-  #devise_for :admins
+  
+  resources :players
+	
   get 'users/new' => 'wusers#new'
 
   root 'welcome#index'
   get 'admin' => 'admin#admin'
   get 'login' => 'admin#login'
   get 'profile' => 'admin#profile'
+	
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

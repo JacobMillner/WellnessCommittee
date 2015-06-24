@@ -7,14 +7,14 @@ class Wusers::RegistrationsController < Devise::RegistrationsController
   # allows custom parameters for devise
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) do |u|
-      u.permit(:isAdmin, :email, :password, :password_confirmation)
+      u.permit(:name, :isAdmin, :email, :password, :password_confirmation)
     end
     devise_parameter_sanitizer.for(:account_update) do |u|
-      u.permit(:isAdmin, :email, :password, :password_confirmation, :current_password)
+      u.permit(:name, :email, :password, :password_confirmation, :current_password)
     end
   end
   # put sign_up code here
-  def after_sign_up_path_for(resource)
+ #def after_sign_up_path_for(resource)
 
-  end
+ # end
 end 

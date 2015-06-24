@@ -1,4 +1,5 @@
 class AdminController < ApplicationController
+  before_action :authenticate_wuser!
   before_filter :isAdmin?
   
   def login
