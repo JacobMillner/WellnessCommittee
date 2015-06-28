@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :wusers, :controllers => {:registrations => "wusers/registrations", 
                                        :sessions => "wusers/custom_sessions"}
   
-  resources :players
 	
   get 'users/new' => 'wusers#new'
 
