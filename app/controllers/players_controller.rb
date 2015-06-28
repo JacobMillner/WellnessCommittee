@@ -1,19 +1,36 @@
 class PlayersController < ApplicationController
   respond_to :html, :json
 
-  def new
-	  @player = Players.new
-	  respond_modal_with @player
+  def index
+	  @player = Players.all
   end
+	
+	def create
+		@player = Players.new(player_params)
 
-  def create
-	  @player = Players.create(category_params)
-	  respond_modal_with @player, location: root_path
+    respond_to do |format|
+		if @player.save
+		    format.html { redirect_to @player, notice: 'Player was successfully created.' }
+			format.json { render :show, status: :created, location: @player }
+        else
+        	format.html { render :new }
+			format.json { render json: @player.errors, status: :unprocessable_entity }
+        end
+    end
+	
+	def destroy
+		@player.destroy
+    	respond_to do |format|
+			format.html { redirect_to players_url, notice: 'Player was successfully deleted.' }
+        	format.json { head :no_content }
+    	end
   end
-
-  private
-
-  def category_params
-    params.require(:category).permit(:name)
-  end
+	
+	private
+	
+	# Never trust parameters from the scary internet, only allow the white list through.
+	def player_params
+		params.require(:player).permit(:name, :points)
+    end
+	
 end

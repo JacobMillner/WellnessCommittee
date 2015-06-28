@@ -1,8 +1,0 @@
-.panel.panel-default
-  .panel-heading
-    h3.panel-title
-      = player.name
-      = link_to player, data: {confirm: 'Are you sure?'}, method: :delete, class: 'remove-player' do
-        |&times;
-  .panel-body
-    = simple_format player.points
