@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150623003517) do
+ActiveRecord::Schema.define(version: 20150628225759) do
 
   create_table "Wusers", force: true do |t|
     t.string   "email",                  default: "",    null: false
@@ -49,14 +49,12 @@ ActiveRecord::Schema.define(version: 20150623003517) do
   end
 
   create_table "players", force: true do |t|
-    t.string   "name"
+    t.string   "fullName"
     t.integer  "points"
+    t.string   "shoptechEmail"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "wuser_id"
   end
-
-  add_index "players", ["wuser_id"], name: "index_players_on_wuser_id"
 
   create_table "points_audits", force: true do |t|
     t.datetime "modDate"
