@@ -1,22 +1,27 @@
 class PlayersController < ApplicationController
-  respond_to :html, :json
+	before_action :set_link, only: [:show, :edit, :update, :destroy]
 
-  def index
-	  @player = Players.all
-  end
+	def index
+		@players = Players.all
+	end
+	
+	def new
+		@player = Players.new
+    end
 	
 	def create
 		@player = Players.new(player_params)
 
-    respond_to do |format|
-		if @player.save
-		    format.html { redirect_to @player, notice: 'Player was successfully created.' }
-			format.json { render :show, status: :created, location: @player }
-        else
-        	format.html { render :new }
-			format.json { render json: @player.errors, status: :unprocessable_entity }
-        end
-    end
+    	respond_to do |format|
+			if @player.save
+		    	format.html { redirect_to @player, notice: 'Player was successfully created.' }
+				format.json { render :show, status: :created, location: @player }
+        	else
+        		format.html { render :new }
+				format.json { render json: @player.errors, status: :unprocessable_entity }
+        	end
+    	end
+	end
 	
 	def destroy
 		@player.destroy
@@ -24,7 +29,7 @@ class PlayersController < ApplicationController
 			format.html { redirect_to players_url, notice: 'Player was successfully deleted.' }
         	format.json { head :no_content }
     	end
-  end
+	end
 	
 	private
 	
