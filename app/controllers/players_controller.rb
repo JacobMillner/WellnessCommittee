@@ -5,7 +5,8 @@ class PlayersController < ApplicationController
 
   def index
     @players = Player.all
-    respond_with(@players)
+	@player = Player.new
+	respond_with(@player, @players)
   end
 
   def show

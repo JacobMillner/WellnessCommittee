@@ -24,6 +24,7 @@
     <%= f.text_field :shoptechEmail %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+	  <%= f.submit %>
+	  <%= f.submit 'Cancel', :class => "btn btn-danger", :data => { :dismiss => 'modal' }, :onclick => "form_submitted = true; return false;"%>
   </div>
 <% end %>
