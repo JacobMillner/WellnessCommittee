@@ -18,16 +18,17 @@
         <td><%= player.shoptechEmail %></td>
         <td><%= link_to 'Show', player %></td>
         <td><%= link_to 'Edit', edit_player_path(player) %></td>
-        <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		<!-- TODO: Change to if statement to check if connected -->
+		<td>Connect to User</td>
+		<td>Add Points</td>
+		<td>Remove Points</td>
+		<td><%= link_to 'Delete', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>  
   </tbody>
 </table>
-</div>
 
 <a data-toggle="modal" href="#myModal" class="btn btn-primary">Add Player</a>
-  
-
   <div class="modal" id="myModal">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -36,12 +37,9 @@
           <h4 class="modal-title">Add Player</h4>
         </div><div class="container"></div>
         <div class="modal-body">
-          Add a new player.
-          <h1>New player</h1>
+			
+			<%= render 'form' %>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', players_path %>
         </div>
         <div class="modal-footer">
         </div>

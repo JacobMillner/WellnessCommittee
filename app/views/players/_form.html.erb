@@ -11,20 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :fullName %><br>
-    <%= f.text_field :fullName %>
+  <div class="form-group">
+    <%= f.label :fullName, :class => 'control-label' %><br>
+    <%= f.text_field :fullName, :class => 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :points %><br>
-    <%= f.number_field :points %>
+  <div class="form-group">
+    <%= f.label :points, :class => 'control-label' %><br>
+    <%= f.number_field :points, :class => 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :shoptechEmail %><br>
-    <%= f.text_field :shoptechEmail %>
+  <div class="form-group">
+    <%= f.label :shoptechEmail, :class => 'control-label' %><br>
+    <%= f.text_field :shoptechEmail, :class => 'form-control' %>
   </div>
   <div class="actions">
-	  <%= f.submit %>
-	  <%= f.submit 'Cancel', :class => "btn btn-danger", :data => { :dismiss => 'modal' }, :onclick => "form_submitted = true; return false;"%>
+	  <%= f.submit :class => 'btn btn-primary' %>
+	  <%= f.submit 'Cancel', :class => "btn btn-default", :data => { :dismiss => 'modal' }, :onclick => "form_submitted = true; return false;"%>
   </div>
 <% end %>
