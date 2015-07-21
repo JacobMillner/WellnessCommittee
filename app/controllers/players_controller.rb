@@ -24,9 +24,18 @@ class PlayersController < ApplicationController
 
   def create
     @player = Player.new(player_params)
-    @player.save
+    #try and find a wuser to connect the player to
+    @wuserConnect = Wuser.find_by email: @player.shoptechEmail
+    if @wuserConnect != nil
+      @player.wuser_id = @wuserConnect.id
+      @wuserConnect.isPlayerConnected = true
+      @player.save
+      @wuserConnect.save
+    else
+      @player.save
+    end
     #respond_with(@player)
-	redirect_to action: "index"
+	  redirect_to action: "index"
   end
 
   def update
